@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="نجمة للتسوق">
+<meta property="og:description" content="أزياء نسائية ورجالية وأطفال، كوزمتك ومفروشات. توصيل لكافة المحافظات.">
+<meta property="og:image" content="images/beige.jpg">
+<link rel="icon" href="images/logo.jpg">
+<title>نجمة للتسوق</title>
+<meta name="description" content="نجمة للتسوق — أزياء نسائية ورجالية وأطفال، كوزمتك ومفروشات. بغداد، توصيل لكافة المحافظات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap">
+<style>
+/* Layout: RTL boutique — black-and-gold masthead, linen catalogue, a sticky order bag that composes the DM for Instagram. */
+:root{
+  --bg:#F3EEE6;        /* linen */
+  --surface:#FBF8F3;
+  --ink:#1B1712;
+  --muted:#6E6457;
+  --line:#DCD3C5;
+  --gold:#A9822F;
+  --gold-soft:#E9DCC0;
+  --night:#14110D;     /* masthead */
+  --on-night:#F1E7D3;
+  --ok:#2F6B4F;
+  --f-display:"El Messiri","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-latin:"Playfair Display",Georgia,serif;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15120E;--surface:#1E1A15;--ink:#F1E9DC;--muted:#B3A795;--line:#3A3229;--gold:#D2AC5E;--gold-soft:#3A2F1C;--night:#0D0B08;--on-night:#F1E7D3;--ok:#7CC3A0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15120E;--surface:#1E1A15;--ink:#F1E9DC;--muted:#B3A795;--line:#3A3229;--gold:#D2AC5E;--gold-soft:#3A2F1C;--night:#0D0B08;--on-night:#F1E7D3;--ok:#7CC3A0;color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;direction:rtl}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.25;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--f-latin);letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--gold)}
+
+/* masthead */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--night);color:var(--on-night);border-bottom:1px solid #3a2f1c}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:50%;border:1px solid #6b5426}
+.brand b{font-family:var(--f-latin);letter-spacing:.22em;font-size:1rem;font-weight:600}
+.brand small{display:block;font-family:var(--f-latin);letter-spacing:.3em;font-size:.6rem;color:#c9b07a}
+.nav{display:flex;gap:4px;margin-inline-start:auto}
+.nav a{text-decoration:none;font-size:.92rem;padding:6px 10px;border-radius:8px;color:#d9cdb5}
+.nav a:hover{background:#2a2219;color:#fff}
+.bagbtn{display:flex;align-items:center;gap:8px;background:#C9A24E;color:#14110D;border:0;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+.bagbtn .n{background:#14110D;color:#F1E7D3;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.78rem;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.nav{display:none}.bagbtn{margin-inline-start:auto}}
+
+/* hero */
+.hero{background:var(--night);color:var(--on-night);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-block:56px 64px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:700;color:#F6EBD4}
+.hero h1 em{font-style:normal;color:#D6B25F}
+.hero p.lead{margin-top:14px;max-width:34ch;color:#cfc2aa;font-size:1.08rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{border:1px solid #5a4825;color:#e6d4ae;border-radius:999px;padding:4px 12px;font-size:.88rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:#C9A24E;color:#14110D}
+.btn-ghost{border-color:#6b5426;color:#F1E7D3;background:transparent}
+.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.triptych figure{margin:0;border-radius:120px 120px 10px 10px;overflow:hidden;border:1px solid #4a3b20;background:#E8E1D6}
+.triptych figure:nth-child(2){transform:translateY(-22px)}
+.triptych img{display:block;width:100%;aspect-ratio:206/426;object-fit:cover}
+.hero .note{margin-top:14px;font-size:.82rem;color:#9f9077;text-align:center}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 44px}.triptych{max-width:420px;margin-inline:auto;width:100%}}
+
+/* strip */
+.strip{border-bottom:1px solid var(--line);background:var(--surface)}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-block:18px}
+.strip div{display:flex;gap:12px;align-items:center}
+.strip svg{flex:none;width:30px;height:30px;color:var(--gold)}
+.strip b{display:block;font-size:.98rem}
+.strip small{color:var(--muted);font-size:.85rem}
+@media (max-width:700px){.strip .wrap{grid-template-columns:1fr}}
+
+section{padding-block:64px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}
+.sec-head p{color:var(--muted);max-width:52ch}
+
+/* product */
+.product{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.gallery{display:grid;grid-template-columns:1fr 84px;gap:12px}
+.main-img{border-radius:16px;overflow:hidden;background:#E8E1D6;position:relative}
+.main-img img{display:block;width:100%;aspect-ratio:206/300;object-fit:cover;object-position:center 20%;transition:opacity .25s}
+.tag{position:absolute;top:12px;right:12px;background:var(--night);color:#E6CC8E;font-family:var(--f-latin);letter-spacing:.18em;font-size:.68rem;padding:5px 10px;border-radius:999px}
+.thumbs{display:flex;flex-direction:column;gap:10px}
+.thumbs button{padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:none}
+.thumbs button[aria-pressed="true"]{border-color:var(--gold)}
+.thumbs img{display:block;width:100%;aspect-ratio:206/300;object-fit:cover;object-position:center 15%}
+.p-info{min-width:0;display:flex;flex-direction:column;gap:18px}
+.p-info h3{font-size:2rem}
+.p-info .latin{font-family:var(--f-latin);font-size:1.1rem;color:var(--muted)}
+.feat{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.feat li{display:flex;gap:10px;align-items:baseline}
+.feat li::before{content:"";flex:none;width:7px;height:7px;transform:rotate(45deg) translateY(-2px);background:var(--gold)}
+.opt-label{font-weight:600;font-size:.95rem;display:flex;justify-content:space-between}
+.opt-label span{color:var(--muted);font-weight:400}
+.swatches,.sizes{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.sw{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 14px 6px 8px;cursor:pointer}
+.sw i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+.sw[aria-pressed="true"],.sz[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;background:var(--gold-soft)}
+.sz{min-width:52px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:6px 10px;cursor:pointer;font-family:var(--f-latin);font-variant-numeric:tabular-nums}
+.price-note{display:flex;gap:10px;align-items:center;background:var(--gold-soft);border-radius:12px;padding:10px 14px;font-size:.95rem}
+.price-note svg{flex:none;width:22px;height:22px;color:var(--gold)}
+.add{width:100%;justify-content:center;background:var(--ink);color:var(--bg);font-size:1.02rem;padding:13px}
+.added{color:var(--ok);font-size:.92rem;min-height:1.6em}
+@media (max-width:860px){.product{grid-template-columns:1fr;padding:16px}.gallery{grid-template-columns:1fr}.thumbs{flex-direction:row}.thumbs button{width:72px}}
+
+/* categories */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cat svg{width:44px;height:44px;color:var(--gold)}
+.cat h3{font-size:1.25rem}
+.cat p{color:var(--muted);font-size:.93rem;flex:1}
+.cat .soon{align-self:flex-start;font-size:.78rem;border:1px dashed var(--gold);color:var(--gold);border-radius:999px;padding:2px 10px}
+.cat .ask{align-self:flex-start;background:none;border:0;padding:0;color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{counter-increment:s;border-top:2px solid var(--gold);padding-top:14px}
+.step::before{content:counter(s,arabic-indic);font-family:var(--f-display);font-size:2.2rem;color:var(--gold);line-height:1}
+.step h3{font-size:1.2rem;margin-top:6px}
+.step p{color:var(--muted);margin-top:4px}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:760px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--gold);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin-top:8px}
+
+footer{background:var(--night);color:#cfc2aa;padding-block:36px;margin-top:20px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer a{color:#E6CC8E}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,8,5,.55);z-index:40}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(440px,100%);background:var(--surface);z-index:41;display:flex;flex-direction:column;box-shadow:0 0 40px rgba(0,0,0,.3);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)}
+.dr-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dr-head h2{font-size:1.4rem}
+.x{background:none;border:1px solid var(--line);border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1.1rem}
+.dr-body{flex:1;overflow:auto;padding:16px 18px;display:flex;flex-direction:column;gap:16px}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
+.line img{width:56px;height:72px;object-fit:cover;object-position:center 15%;border-radius:8px}
+.line b{display:block}
+.line small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer}
+.qty output{min-width:18px;text-align:center;font-variant-numeric:tabular-nums}
+.empty{color:var(--muted);text-align:center;padding:30px 10px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:.88rem;font-weight:600}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:9px 12px;width:100%}
+.msg{white-space:pre-wrap;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:12px;font-size:.9rem;max-height:180px;overflow:auto}
+.dr-foot{padding:14px 18px;border-top:1px solid var(--line);display:grid;gap:8px}
+.dr-foot .btn{justify-content:center}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-line{border-color:var(--line);background:transparent;color:var(--ink)}
+.hint{font-size:.84rem;color:var(--muted);text-align:center}
+.toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 18px;border-radius:999px;z-index:60;font-size:.92rem}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="نجمة للتسوق">
+      <img src="images/logo.jpg" alt="شعار نجمة">
+      <span><b>NAJMA</b><small>SHOPPING</small></span>
+    </a>
+    <nav class="nav" aria-label="أقسام الموقع">
+      <a href="#new">الجديد</a>
+      <a href="#sections">الأقسام</a>
+      <a href="#how">طريقة الطلب</a>
+      <a href="#faq">أسئلة</a>
+    </nav>
+    <button class="bagbtn" id="openBag" type="button" aria-label="سلة الطلب">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      سلة الطلب <span class="n" id="bagCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-block:0">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Autumn / Winter 26</p>
+        <h1>أناقة لكل العائلة<br><em>تحت سقف واحد</em></h1>
+        <p class="lead">متجر من بغداد للأزياء النسائية والرجالية وملابس الأطفال، والكوزمتك والمفروشات. نوصل لكل محافظات العراق لباب البيت.</p>
+        <div class="chips"><span>أزياء نسائية</span><span>رجالية</span><span>أطفال</span><span>كوزمتك</span><span>مفروشات</span></div>
+        <div class="cta">
+          <a class="btn btn-gold" href="#new">تسوّقي الجديد</a>
+          <a class="btn btn-ghost" href="https://ig.me/m/najma.shopping" target="_blank" rel="noopener">راسلينا على إنستغرام</a>
+        </div>
+      </div>
+      <div>
+        <div class="triptych">
+          <figure><img src="images/beige.jpg" alt="ترنش كوت بيج"></figure>
+          <figure><img src="images/brown.jpg" alt="ترنش كوت بني"></figure>
+          <figure><img src="images/black.jpg" alt="ترنش كوت أسود"></figure>
+        </div>
+        <p class="note">ترنش كوت كلاسيكي — بيج · بني · أسود</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><b>توصيل لكافة المحافظات</b><small>من بغداد لباب بيتچ</small></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg><span><b>الأسعار بالخاص</b><small>راسلينا ونرد عليچ بأسرع وقت</small></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><span><b>جديد وحصري</b><small>تشكيلات الموسم أول بأول</small></span></div>
+    </div>
+  </div>
+
+  <section id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow">New Collection</p><h2>وصل حديثاً</h2></div>
+        <p>اختاري اللون والقياس وضيفي القطعة لسلة الطلب، وبعدها نجهزلچ رسالة جاهزة تدزينها إلنا بالخاص.</p>
+      </div>
+
+      <article class="product" aria-labelledby="pTitle">
+        <div class="gallery">
+          <div class="main-img"><span class="tag">AW 26</span><img id="mainImg" src="images/beige.jpg" alt="ترنش كوت بيج"></div>
+          <div class="thumbs" role="group" aria-label="صور الألوان">
+            <button type="button" data-c="beige" aria-pressed="true"><img src="images/beige.jpg" alt="بيج"></button>
+            <button type="button" data-c="brown" aria-pressed="false"><img src="images/brown.jpg" alt="بني"></button>
+            <button type="button" data-c="black" aria-pressed="false"><img src="images/black.jpg" alt="أسود"></button>
+          </div>
+        </div>
+        <div class="p-info">
+          <div><h3 id="pTitle">ترنش كوت كلاسيكي</h3><p class="latin">Trench Coat</p></div>
+          <p>القطعة الكلاسيكية اللي ما تغيب عن خزانة أي امرأة أنيقة، ترافقچ من صباح الدوام لحد سهرة المساء.</p>
+          <ul class="feat">
+            <li>قصّة مزدوجة الأزرار بلمسة عصرية</li>
+            <li>حزام على الخصر يبرز القوام</li>
+            <li>ياقة عريضة وتفاصيل كتف كلاسيكية</li>
+            <li>مثالي لأجواء الخريف والشتاء</li>
+          </ul>
+          <div>
+            <div class="opt-label">اللون <span id="colorName">بيج</span></div>
+            <div class="swatches" role="group" aria-label="اختيار اللون">
+              <button type="button" class="sw" data-c="beige" aria-pressed="true"><i style="background:#CDB592"></i>بيج</button>
+              <button type="button" class="sw" data-c="brown" aria-pressed="false"><i style="background:#4A2A1E"></i>بني</button>
+              <button type="button" class="sw" data-c="black" aria-pressed="false"><i style="background:#16161A"></i>أسود</button>
+            </div>
+          </div>
+          <div>
+            <div class="opt-label">القياس المطلوب <span>نأكدلچ التوفر بالخاص</span></div>
+            <div class="sizes" role="group" aria-label="اختيار القياس">
+              <button type="button" class="sz" aria-pressed="false">S</button>
+              <button type="button" class="sz" aria-pressed="false">M</button>
+              <button type="button" class="sz" aria-pressed="false">L</button>
+              <button type="button" class="sz" aria-pressed="false">XL</button>
+              <button type="button" class="sz" aria-pressed="false">XXL</button>
+              <button type="button" class="sz" aria-pressed="false">غير متأكدة</button>
+            </div>
+          </div>
+          <div class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg>للأسعار والقياسات راسلينا خاص. الكمية محدودة.</div>
+          <button class="btn add" id="addBtn" type="button">أضيفي لسلة الطلب</button>
+          <p class="added" id="addedMsg" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sections" style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow">Departments</p><h2>أقسام المتجر</h2></div>
+        <p>تشكيلات كل قسم تنزل أول بأول على صفحتنا. تريدين شي معيّن؟ اسألينا عنه.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="تصفية الأقسام">
+        <button class="tab" role="tab" aria-selected="true" data-f="all">الكل</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="wear">ملابس</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="beauty">كوزمتك</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="home">مفروشات</button>
+      </div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section id="how" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head"><div><p class="eyebrow">How to order</p><h2>طريقة الطلب</h2></div><p>الطلب عدنا سهل وسريع.</p></div>
+      <div class="steps">
+        <div class="step"><h3>اختاري قطعتچ</h3><p>حددي اللون والقياس وضيفيها لسلة الطلب.</p></div>
+        <div class="step"><h3>راسلينا خاص</h3><p>انسخي رسالة الطلب الجاهزة ودزيها إلنا على إنستغرام ويا عنوانچ.</p></div>
+        <div class="step"><h3>توصلچ لباب البيت</h3><p>نأكد وياچ السعر والتوفر، ونوصل لكافة المحافظات.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><div><p class="eyebrow">FAQ</p><h2>أسئلة تتكرر</h2></div></div>
+      <div class="faq">
+        <details><summary>ليش الأسعار مو مكتوبة؟</summary><p>الأسعار نعطيها بالخاص حتى نأكدلچ التوفر والقياس بنفس الوقت. راسلينا على إنستغرام ونرد عليچ بأسرع وقت.</p></details>
+        <details><summary>توصلون لمحافظتي؟</summary><p>نعم، التوصيل لكافة محافظات العراق لباب البيت.</p></details>
+        <details><summary>شلون أعرف قياسي؟</summary><p>اختاري «غير متأكدة» بسلة الطلب، واكتبيلنا طولچ ووزنچ بالملاحظات، ونساعدچ نختار القياس المناسب.</p></details>
+        <details><summary>سلة الطلب تدز الطلب بنفسها؟</summary><p>لا. السلة تجهز رسالة مرتبة بكل التفاصيل، وإنتي تنسخيها وتدزيها إلنا على إنستغرام. الطلب يتأكد بعد ما نرد عليچ.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="images/logo.jpg" alt=""><span><b>NAJMA</b><small>SHOPPING</small></span></div>
+    <p>بغداد · توصيل لكافة المحافظات · <a href="https://www.instagram.com/najma.shopping/" target="_blank" rel="noopener">@najma.shopping</a></p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="سلة الطلب" role="dialog" aria-modal="true">
+  <div class="dr-head"><h2>سلة الطلب</h2><button class="x" id="closeBag" type="button" aria-label="إغلاق">✕</button></div>
+  <div class="dr-body">
+    <div id="lines"></div>
+    <form id="orderForm" style="display:grid;gap:12px" novalidate>
+      <div class="field"><label for="fName">الاسم</label><input id="fName" autocomplete="name" placeholder="مثلاً: زينب علي"></div>
+      <div class="field"><label for="fGov">المحافظة</label><select id="fGov"></select></div>
+      <div class="field"><label for="fArea">المنطقة وأقرب نقطة دالة</label><input id="fArea" placeholder="مثلاً: المنصور، قرب جامع الرحمن"></div>
+      <div class="field"><label for="fNote">ملاحظات (الطول والوزن إذا مو متأكدة من القياس)</label><textarea id="fNote" rows="2"></textarea></div>
+    </form>
+    <div><div class="opt-label" style="margin-bottom:6px">رسالة الطلب الجاهزة</div><div class="msg" id="msg"></div></div>
+  </div>
+  <div class="dr-foot">
+    <button class="btn btn-dark" id="copyBtn" type="button">انسخي رسالة الطلب</button>
+    <a class="btn btn-line" href="https://ig.me/m/najma.shopping" target="_blank" rel="noopener">افتحي محادثتنا على إنستغرام</a>
+    <p class="hint">انسخي الرسالة، افتحي المحادثة والصقيها. الطلب يتأكد بعد ردنا عليچ.</p>
+  </div>
+</aside>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  var IMG={beige:"images/beige.jpg",brown:"images/brown.jpg",black:"images/black.jpg"};
+  var NAME={beige:"بيج",brown:"بني",black:"أسود"};
+  var color="beige",size=null,bag=[];
+  try{bag=JSON.parse(localStorage.getItem("najma-bag")||"[]")||[]}catch(e){bag=[]}
+  function save(){try{localStorage.setItem("najma-bag",JSON.stringify(bag))}catch(e){}}
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  function setColor(c){color=c;$("#mainImg").src=IMG[c];$("#mainImg").alt="ترنش كوت "+NAME[c];$("#colorName").textContent=NAME[c];
+    $$("[data-c]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.c===c?"true":"false")});}
+  $$("[data-c]").forEach(function(b){b.addEventListener("click",function(){setColor(b.dataset.c)})});
+  $$(".sz").forEach(function(b){b.addEventListener("click",function(){size=b.textContent;$$(".sz").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")})})});
+
+  $("#addBtn").addEventListener("click",function(){
+    if(!size){$("#addedMsg").style.color="var(--gold)";$("#addedMsg").textContent="اختاري القياس أولاً، أو «غير متأكدة».";return}
+    var f=bag.find(function(i){return i.c===color&&i.s===size});
+    if(f)f.q++;else bag.push({c:color,s:size,q:1});
+    save();render();$("#addedMsg").style.color="";$("#addedMsg").textContent="انضافت للسلة: ترنش كوت "+NAME[color]+" · "+size;
+  });
+
+  var CATS=[
+    {f:"wear",t:"أزياء نسائية",d:"معاطف، فساتين وتنسيقات الموسم.",live:true,ic:'<path d="M9 3l3 3 3-3 3 4-2 2v12H8V9L6 7z"/>'},
+    {f:"wear",t:"أزياء رجالية",d:"قطع يومية ورسمية بخامات مريحة.",ic:'<path d="M8 3h8l3 4-3 2v12H8V9L5 7z"/><path d="M12 3v6"/>'},
+    {f:"wear",t:"ملابس أطفال",d:"راحة وألوان لكل الأعمار.",ic:'<path d="M8 5l4 2 4-2 3 4-2 1v9H7v-9L5 9z"/>'},
+    {f:"beauty",t:"كوزمتك",d:"مستحضرات تجميل وعناية.",ic:'<rect x="7" y="9" width="7" height="12" rx="2"/><path d="M9 9V5h3v4"/><path d="M17 21V11l2-3v13z"/>'},
+    {f:"home",t:"مفروشات",d:"لمسات ديكور وراحة للبيت.",ic:'<path d="M4 12h16v6H4z"/><path d="M6 12V8h12v4"/><path d="M5 18v2M19 18v2"/>'}
+  ];
+  function renderCats(f){$("#cats").innerHTML=CATS.filter(function(c){return f==="all"||c.f===f}).map(function(c){
+    return '<div class="cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">'+c.ic+'</svg><h3>'+c.t+'</h3><p>'+c.d+'</p>'+
+      (c.live?'<a class="ask" href="#new">شوفي الجديد</a>':'<span class="soon">التشكيلة تنزل قريباً</span><button class="ask" type="button" data-ask="'+c.t+'">اسألينا عن هذا القسم</button>')+'</div>'}).join("");}
+  renderCats("all");
+  $$(".tab").forEach(function(t){t.addEventListener("click",function(){$$(".tab").forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false")});renderCats(t.dataset.f)})});
+  $("#cats").addEventListener("click",function(e){var b=e.target.closest("[data-ask]");if(!b)return;askNote=b.dataset.ask;openBag();});
+  var askNote=null;
+
+  var GOV=["بغداد","البصرة","نينوى","أربيل","النجف","كربلاء","بابل","ذي قار","ديالى","الأنبار","كركوك","صلاح الدين","واسط","ميسان","الديوانية","المثنى","دهوك","السليمانية","حلبجة"];
+  $("#fGov").innerHTML='<option value="">اختاري المحافظة</option>'+GOV.map(function(g){return "<option>"+g+"</option>"}).join("");
+
+  function message(){
+    var L=["مرحباً نجمة، أريد أطلب:"];
+    bag.forEach(function(i){L.push("• ترنش كوت كلاسيكي — اللون: "+NAME[i.c]+" — القياس: "+i.s+" — العدد: "+i.q)});
+    if(askNote)L.push("• أريد أستفسر عن قسم: "+askNote);
+    if(!bag.length&&!askNote)L.push("(السلة فارغة)");
+    var n=$("#fName").value.trim(),g=$("#fGov").value,a=$("#fArea").value.trim(),no=$("#fNote").value.trim();
+    if(n)L.push("الاسم: "+n);if(g)L.push("المحافظة: "+g);if(a)L.push("العنوان: "+a);if(no)L.push("ملاحظات: "+no);
+    L.push("ممكن السعر والتوفر؟");return L.join("\n");
+  }
+  function render(){
+    var count=bag.reduce(function(s,i){return s+i.q},0);$("#bagCount").textContent=count;
+    $("#lines").innerHTML=bag.length?bag.map(function(i,k){return '<div class="line"><img src="'+IMG[i.c]+'" alt=""><div><b>ترنش كوت كلاسيكي</b><small>'+NAME[i.c]+' · '+i.s+'</small></div><div class="qty"><button type="button" data-k="'+k+'" data-d="-1" aria-label="إنقاص">−</button><output>'+i.q+'</output><button type="button" data-k="'+k+'" data-d="1" aria-label="زيادة">+</button></div></div>'}).join(""):
+      '<p class="empty">'+(askNote?"راح نجهزلچ رسالة استفسار عن قسم "+askNote+".":"السلة فارغة. اختاري قطعة من «وصل حديثاً».")+'</p>';
+    $("#msg").textContent=message();
+  }
+  $("#lines").addEventListener("click",function(e){var b=e.target.closest("[data-k]");if(!b)return;var i=bag[+b.dataset.k];i.q+=+b.dataset.d;if(i.q<1)bag.splice(+b.dataset.k,1);save();render();});
+  $("#orderForm").addEventListener("input",render);$("#orderForm").addEventListener("change",render);
+  $("#orderForm").addEventListener("submit",function(e){e.preventDefault()});
+
+  function openBag(){render();$("#drawer").hidden=false;$("#scrim").hidden=false;$("#closeBag").focus();}
+  function closeBag(){$("#drawer").hidden=true;$("#scrim").hidden=true;}
+  $("#openBag").addEventListener("click",openBag);$("#closeBag").addEventListener("click",closeBag);$("#scrim").addEventListener("click",closeBag);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeBag()});
+
+  function toast(t){var el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2400);}
+  $("#copyBtn").addEventListener("click",function(){
+    var txt=message();
+    function fallback(){var r=document.createRange();r.selectNodeContents($("#msg"));var s=getSelection();s.removeAllRanges();s.addRange(r);toast("الرسالة محددة، انسخيها يدوياً");}
+    try{navigator.clipboard.writeText(txt).then(function(){toast("انسخت الرسالة، الصقيها بمحادثتنا")},fallback)}catch(e){fallback()}
+  });
+  render();
+})();
+</script>
+
+</body>
+</html>
